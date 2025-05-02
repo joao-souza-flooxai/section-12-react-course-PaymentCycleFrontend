@@ -6,7 +6,7 @@ BillingCycle.updateOptions({ new: true, runValidators: true });
 BillingCycle.after('post', errorHandler).after('put', errorHandler);
 
 BillingCycle.route('get', (req, res, next) => {
-
+    console.log('GET /billingCycles chamado')
     BillingCycle.find({}, (err, docs) => {
 
         if(!err) {

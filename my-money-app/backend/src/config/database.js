@@ -1,6 +1,15 @@
 const mongoose = require('mongoose');
 mongoose.Promise = global.Promise;
-module.exports = mongoose.connect('mongodb://localhost:2828/mymoney');
+
+const dbUrl = 'mongodb://localhost:2828/mymoney';
+
+mongoose.connect(dbUrl, { useNewUrlParser: true, useUnifiedTopology: true })
+  .then(() => {
+    console.log("MongoDB conectado com sucesso.");
+  })
+  .catch((err) => {
+    console.error("Erro ao conectar ao MongoDB: ", err);
+  });
 
 mongoose.Error.messages.general.required = "The field '{PATH}' is mandatory.";
 mongoose.Error.messages.Number.min = 
