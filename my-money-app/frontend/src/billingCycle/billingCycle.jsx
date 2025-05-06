@@ -11,7 +11,7 @@ import { selectTab, showTabs } from '../common/tab/tabActions';
 import { bindActionCreators } from 'redux';
 import List from './billingCycleList';
 import Form from "./billingCycleForm";
-import { create, update, remove } from "./billingCycleActions";
+import {init, create, update, remove } from "./billingCycleActions";
 
 class BillingCycle extends Component {
 
@@ -64,6 +64,6 @@ class BillingCycle extends Component {
 
 
 const mapDispatchToProps = dispatch => bindActionCreators({ 
-    selectTab, showTabs, create, update, remove
+    init, selectTab, showTabs, create, update, remove
 }, dispatch);
 export default connect(null, mapDispatchToProps)(BillingCycle);
